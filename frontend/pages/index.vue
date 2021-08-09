@@ -1,7 +1,15 @@
 <template>
-  <div>
-    <h1 class="text-3xl text-red-500">Inspection data</h1>
-    {{ this.inspectionData.data }}
+  <div class="h-screen w-screen bg-gray-100">
+    <div class="w-11/12 mx-auto pt-2">
+      <h1 class="text-4xl ml-2 my-2 font-semibold text-black border-b-4">Inspection data</h1>
+      <div class="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-10 equal-grid-height">
+        <div v-for="turbine in this.inspectionData.data" class="flex justify-center items-center btn btn--animate"
+             :class="{ 'btn--danger': isNaN(turbine) }"
+        >
+          <span class="text-center text-lg font-medium">{{ turbine }}</span>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 

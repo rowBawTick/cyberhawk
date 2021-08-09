@@ -1,0 +1,15 @@
+.btn {
+    @apply text-white bg-blue-500 rounded-lg my-2 py-0.5 px-2 mx-2 border-blue-900 border-2 shadow-lg
+}
+
+.btn--danger {
+    @apply bg-red-600 border-red-900
+}
+
+.btn--animate {
+    @apply ease-in-out transform hover:scale-125 transition duration-150
+}
+
+.equal-grid-height {
+    grid-auto-rows: 1fr;
+}
