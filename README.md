@@ -21,3 +21,5 @@ $ composer install
 # serve with hot reload at http://localhost:8000/ 
 $ symfony server:start
 ```
+
+#### *** Ensure the `backendApi` in `index.vue` is set to the correct url that symfony serves. ***
