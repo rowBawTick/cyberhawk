@@ -1,8 +1,13 @@
 <template>
   <div>
+    <h1 class="text-3xl text-red-500">Inspection data</h1>
     {{ this.inspectionData.data }}
   </div>
 </template>
+
+<style>
+@import "assets/css/main.css";
+</style>
 
 <script>
 import axios from 'axios';
