@@ -18,7 +18,19 @@ class InspectionData extends AbstractController
     #[Route('/data', name: 'data', methods: ['GET'])]
     public function getData(): Response
     {
-        return new JsonResponse(["data" => "Hello World!"]);
-    }
+        $windTurbineOutput = [];
+        for ($i=1; $i<=100; $i++) {
+            if ($i % 3 === 0 && $i % 5 === 0) {
+                $windTurbineOutput[] = 'Coating Damage and Lightning Strike';
+            } elseif ($i % 3 === 0) {
+                $windTurbineOutput[] = 'Coating Damage';
+            } elseif ($i % 5 === 0) {
+                $windTurbineOutput[] = 'Lightning Strike';
+            } else {
+                $windTurbineOutput[] = $i;
+            }
+        }
 
+        return new JsonResponse(["data" => $windTurbineOutput]);
+    }
 }
