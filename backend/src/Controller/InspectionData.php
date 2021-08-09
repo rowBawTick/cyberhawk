@@ -18,19 +18,19 @@ class InspectionData extends AbstractController
     #[Route('/data', name: 'data', methods: ['GET'])]
     public function getData(): Response
     {
-        $windTurbineOutput = [];
+        $inspectionData = [];
         for ($i=1; $i<=100; $i++) {
             if ($i % 3 === 0 && $i % 5 === 0) {
-                $windTurbineOutput[] = 'Coating Damage and Lightning Strike';
+                $inspectionData[] = 'Coating Damage and Lightning Strike';
             } elseif ($i % 3 === 0) {
-                $windTurbineOutput[] = 'Coating Damage';
+                $inspectionData[] = 'Coating Damage';
             } elseif ($i % 5 === 0) {
-                $windTurbineOutput[] = 'Lightning Strike';
+                $inspectionData[] = 'Lightning Strike';
             } else {
-                $windTurbineOutput[] = $i;
+                $inspectionData[] = $i;
             }
         }
 
-        return new JsonResponse(["data" => $windTurbineOutput]);
+        return new JsonResponse(["data" => $inspectionData]);
     }
 }
